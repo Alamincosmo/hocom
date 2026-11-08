@@ -1,26 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Momo+Signature&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
 
+/* Custom Local Bengali Fonts */
+@font-face {
+  font-family: 'Li Manowar Nihar';
+  src: url('/fonts/ManowarNihar.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Li Manowar Nihar';
+  src: url('/fonts/ManowarNihar-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Li Shohid Tahmid Tamin';
+  src: url('/fonts/ShohidTahmidTamin.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Li Shohid Tahmid Tamin';
+  src: url('/fonts/ShohidTahmidTamin-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Li SK Bishal';
+  src: url('/fonts/SKBishal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Li SK Bishal';
+  src: url('/fonts/SKBishal-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --color-hocom-primary: #EA580C;
+  --color-hocom-primary-hover: #C2410C;
+  --color-hocom-amber: #D97706;
+  --color-hocom-gold: #F59E0B;
+  --color-hocom-gold-light: #FEF3C7;
+  --color-hocom-bg-soft: #FFFFFF;
+  --color-hocom-surface: #F9F9FB;
+  --color-hocom-border: #EAE8E3;
+  --color-hocom-text-primary: #241A14;
+  --color-hocom-text-muted: #6B5D52;
+  --color-hocom-teal: #059669;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-display: var(--font-display), 'Cormorant Garamond', Georgia, serif;
+  --font-bengali-serif: var(--font-bengali-serif), 'Noto Serif Bengali', serif;
+  --font-bengali: var(--font-bengali), 'Hind Siliguri', sans-serif;
+  --font-bengali-nihar: 'Li Manowar Nihar', 'Hind Siliguri', sans-serif;
+  --font-bengali-tamin: 'Li Shohid Tahmid Tamin', 'Noto Serif Bengali', serif;
+  --font-bengali-bishal: 'Li SK Bishal', 'Hind Siliguri', sans-serif;
+  --font-ubuntu: 'Ubuntu', sans-serif;
+  --font-josefin: 'Josefin Sans', sans-serif;
+  --font-changa: 'Changa One', sans-serif;
+  --font-momo: 'Momo Signature', cursive;
+  --background: #FFFFFF;
+  --foreground: #1E1815;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #1E1815;
+  background-color: #FFFFFF;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Official Lenis Smooth Scroll Acceleration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Luxury Golden-Orange Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7EFE4;
+}
+::-webkit-scrollbar-thumb {
+  background: #DECBB7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
 }
